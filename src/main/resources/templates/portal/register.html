@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/nprogress.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="apple-touch-icon-precomposed" href="images/icon/icon.png">
+    <link rel="shortcut icon" href="images/icon/favicon.ico">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/nprogress.js"></script>
+    <script src="js/jquery.lazyload.min.js"></script>
+</head>
+<body>
+<h1 align="center">注册</h1>
+<hr/>
+<p align="right">已有账号？
+    <a data-toggle="modal" data-target="#loginModal" class="login" rel="nofollow"><input align="right" type="button"
+                                                                                         value="立即登录"/></a>
+</p>
+<form th:action="@{~/register.action}" method="post">
+    <table cellpadding="10px" cellspacing="0px" align="center">
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" name="username"  placeholder="请输入用户名"/></td>
+        </tr>
+        <tr>
+            <td>密&nbsp;&nbsp;&nbsp;码:</td>
+            <td><input type="password" name="password"  placeholder="请输入密码"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="checkbox" name="agree" id="agree" value="1"/>是否同意本公司协议</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="注册"/></td>
+        </tr>
+    </table>
+</form>
+
+<!--登录注册模态框-->
+<div class="modal fade user-select" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form th:action="@{~/login.action}" method="post">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="loginModalLabel">登录</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="loginModalUserNmae">用户名</label>
+                        <input type="text" class="form-control" id="loginModalUserNmae" name="username"
+                               placeholder="请输入用户名" autofocus maxlength="15" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginModalUserPwd">密码</label>
+                        <input type="password" class="form-control" id="loginModalUserPwd" name="password"
+                               placeholder="请输入密码" maxlength="18" autocomplete="off" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary">登录</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.ias.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
