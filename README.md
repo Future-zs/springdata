@@ -7,4 +7,4 @@
 
 主页：http://localhost:8080/
 管理员主页：http://localhost:8080/admin/index
-项目展示地址：暂无
+项目展示地址：http://www.lwhzs.xyz/
