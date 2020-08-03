@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>注册</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/portal/css/bootstrap.min.css}">
     <link rel="stylesheet" type="text/css" href="css/nprogress.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/portal/css/style.css}">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="apple-touch-icon-precomposed" href="images/icon/icon.png">
     <link rel="shortcut icon" href="images/icon/favicon.ico">
@@ -33,9 +33,9 @@
             <td>密&nbsp;&nbsp;&nbsp;码:</td>
             <td><input type="password" name="password"  placeholder="请输入密码"/></td>
         </tr>
-        <tr>
-            <td colspan="2" align="center"><input type="checkbox" name="agree" id="agree" value="1"/>是否同意本公司协议</td>
-        </tr>
+<!--        <tr>-->
+<!--            <td colspan="2" align="center"><input type="checkbox" name="agree" id="agree" value="1"/>是否同意本公司协议</td>-->
+<!--        </tr>-->
         <tr>
             <td colspan="2" align="center"><input type="submit" value="注册"/></td>
         </tr>

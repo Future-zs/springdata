@@ -12,4 +12,5 @@ public interface ArticleService {
     void save(Article article);
     List<Article> select();
     Article findById(Integer id);
+    void delete(Article article);
 }

@@ -15,7 +15,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
      *
      * @param username 账号
      * @param password 密码
-     * @return 返回User实体类
+     * @return 返回User
      */
     User findByUsernameAndPassword(String username, String password);
 

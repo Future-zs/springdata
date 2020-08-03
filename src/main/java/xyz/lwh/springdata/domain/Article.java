@@ -1,5 +1,8 @@
 package xyz.lwh.springdata.domain;
 
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
 
 /**
@@ -9,47 +12,61 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "add_article")
+@DynamicUpdate
+@DynamicInsert
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Integer id;
     /**
      * 标题
      */
+    @Column(name="title")
     private String title;
     /**
      * 内容
      */
+    @Column(name="content")
     private String content;
     /**
      * 关键字
      */
+    @Column(name="keywords")
     private String keywords;
     /**
-     * 描述
-     */
-    private String describe;
+//     * 描述
+//     */
+    @Column(name="description")
+    private String description;
     /**
      * 栏目
      */
-    private Integer category;
+    @Column(name="category")
+    private int category;
     /**
      * 标签
      */
+    @Column(name="tags")
     private String tags;
     /**
      * 标题图片
      */
+    @Column(name="titlepic")
     private String titlepic;
     /**
      * 公开度
      */
+    @Column(name="visibility")
     private char visibility;
     /**
      * 发布时间
      */
-    private String time;
+    @Column(name="create_time")
+    private String create_time;
 
+    @Column(name="last_time")
+    private String last_time;
     public Article() {
     }
 
@@ -60,13 +77,25 @@ public class Article {
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", keywords='" + keywords + '\'' +
-                ", describe='" + describe + '\'' +
+//                ", describe='" + describe + '\'' +
                 ", category=" + category +
                 ", tags='" + tags + '\'' +
                 ", titlepic='" + titlepic + '\'' +
                 ", visibility=" + visibility +
-                ", time='" + time + '\'' +
+                ", last_time='" + last_time + '\'' +
                 '}';
+    }
+
+    public Article(String title, String content, String keywords, String describe, int category, String tags, String titlepic, char visibility, String last_time) {
+        this.title = title;
+        this.content = content;
+        this.keywords = keywords;
+//        this.describe = describe;
+        this.category = category;
+        this.tags = tags;
+        this.titlepic = titlepic;
+        this.visibility = visibility;
+        this.last_time = last_time;
     }
 
     public Integer getId() {
@@ -101,19 +130,20 @@ public class Article {
         this.keywords = keywords;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescription(String describe) {
+        this.description = description;
     }
 
-    public Integer getCategory() {
+
+    public int getCategory() {
         return category;
     }
 
-    public void setCategory(Integer category) {
+    public void setCategory(int category) {
         this.category = category;
     }
 
@@ -141,11 +171,19 @@ public class Article {
         this.visibility = visibility;
     }
 
-    public String getTime() {
-        return time;
+    public String getCreate_time() {
+        return create_time;
     }
 
-    public void setTime(String time) {
-        this.time = time;
+    public void setCreate_time(String create_time) {
+        this.create_time = create_time;
+    }
+
+    public String getLast_time() {
+        return last_time;
+    }
+
+    public void setLast_time(String last_time) {
+        this.last_time = last_time;
     }
 }

@@ -28,69 +28,69 @@ public class AdminController {
 
     @RequestMapping("/index")
     public String getIndex() {
-        return "/admin/index.html";
+        return "admin/index.html";
     }
 
     @RequestMapping("/login")
     public String getLogin() {
-        return "/admin/login.html";
+        return "admin/login.html";
     }
 
     @RequestMapping("/article")
     public ModelAndView getArticle(Model model) {
         List<Article> list = articleService.select();
         model.addAttribute("article", list);
-        return new ModelAndView("/admin/article.html", "UserModel", model);
+        return new ModelAndView("admin/article.html", "ArticleModel", model);
     }
 
     @RequestMapping("/notice")
     public String getNotice() {
-        return "/admin/notice.html";
+        return "admin/notice.html";
     }
 
     @RequestMapping("/comment")
     public String getComment() {
-        return "/admin/comment.html";
+        return "admin/comment.html";
     }
 
     @RequestMapping("/category")
     public String getCategory() {
-        return "/admin/category.html";
+        return "admin/category.html";
     }
 
     @RequestMapping("/flink")
     public String getFlink() {
-        return "/admin/flink.html";
+        return "admin/flink.html";
     }
 
     @RequestMapping("/manage-user")
     public String getManage() {
-        return "/admin/manage-user.html";
+        return "admin/manage-user.html";
     }
 
     @RequestMapping("/loginlog")
     public String getLoginlog() {
-        return "/admin/loginlog.html";
+        return "admin/loginlog.html";
     }
 
     @RequestMapping("/setting")
     public String getSetting() {
-        return "/admin/setting.html";
+        return "admin/setting.html";
     }
 
     @RequestMapping("/readset")
     public String getReadset() {
-        return "/admin/readset.html";
+        return "admin/readset.html";
     }
 
     @RequestMapping("/add-article")
-    public String getAdd_article() {
-        return "/admin/add-Article.html";
+    public String getAddArticle() {
+        return "admin/add-article.html";
     }
 
     @RequestMapping("/update-article")
-    public String getUpdate_article() {
-        return "/admin/update-Article.html";
+    public String getUpdateArticle() {
+        return "admin/update-article.html";
     }
 
 
@@ -99,10 +99,10 @@ public class AdminController {
         System.out.println(adminUser.getAdminUsername() + "//" + adminUser.getAdminPassword());
         boolean success = adminUserService.login(adminUser);
         if (success) {
-            return new ModelAndView("/admin/index.html");
+            return new ModelAndView("admin/index.html");
 
         } else {
-            return new ModelAndView("redirect:/admin/login");
+            return new ModelAndView("redirect:admin/login");
         }
     }
 }

@@ -15,7 +15,7 @@ public interface AdminUserRepository extends CrudRepository<AdminUser, Integer> 
      *
      * @param admin_username 账号
      * @param admin_password 密码
-     * @return 返回AdminUser实体类
+     * @return 返回AdminUser
      */
     AdminUser findByAdminUsernameAndAdminPassword(String admin_username, String admin_password);
 

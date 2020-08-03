@@ -11,6 +11,7 @@ import xyz.lwh.springdata.domain.Article;
 public interface ArticleRepository extends CrudRepository<Article, Integer> {
 
 
+
     /**
      * findAll 查询
      *
@@ -18,5 +19,4 @@ public interface ArticleRepository extends CrudRepository<Article, Integer> {
      */
     @Override
     Iterable<Article> findAll();
-
 }

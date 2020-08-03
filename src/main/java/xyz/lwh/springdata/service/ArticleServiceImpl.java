@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import xyz.lwh.springdata.domain.Article;
 import xyz.lwh.springdata.repository.ArticleRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +24,6 @@ public class ArticleServiceImpl implements ArticleService{
         articleRepository.save(article);
     }
 
-
     @Override
     public List<Article> select() {
         Iterable<Article> data = articleRepository.findAll();
@@ -34,5 +34,10 @@ public class ArticleServiceImpl implements ArticleService{
     public Article findById(Integer id) {
         Optional<Article> article = articleRepository.findById(id);
         return article.get();
+    }
+
+    @Override
+    public void delete(Article article) {
+        articleRepository.delete(article);
     }
 }

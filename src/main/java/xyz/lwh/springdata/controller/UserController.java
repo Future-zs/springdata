@@ -11,7 +11,7 @@ import xyz.lwh.springdata.service.UserService;
  * @author lwh
  * @date 2020/7/18
  **/
-@RequestMapping("/portal")
+@RequestMapping("portal")
 @Controller
 public class UserController {
 
@@ -20,22 +20,22 @@ public class UserController {
 
     @RequestMapping("/index")
     public String getIndex() {
-        return "/portal/index.html";
+        return "portal/index.html";
     }
 
     @RequestMapping("/category")
     public String getCategory() {
-        return "/portal/category.html";
+        return "portal/category.html";
     }
 
     @RequestMapping("/article")
     public String getArticle() {
-        return "/portal/article.html";
+        return "portal/article.html";
     }
 
     @RequestMapping("/register")
     public String getRegister() {
-        return "/portal/register.html";
+        return "portal/register.html";
     }
 
     /**
@@ -44,7 +44,7 @@ public class UserController {
      */
     @RequestMapping("/tags")
     public String getTags() {
-        return "/portal/tags.html";
+        return "portal/tags.html";
     }
 
     /**
@@ -53,7 +53,7 @@ public class UserController {
      */
     @RequestMapping("/readers")
     public String getReaders() {
-        return "/portal/readers.html";
+        return "portal/readers.html";
     }
 
     /**
@@ -62,7 +62,7 @@ public class UserController {
      */
     @RequestMapping("/links")
     public String getLinks() {
-        return "/portal/links.html";
+        return "portal/links.html";
     }
 
 
@@ -71,10 +71,10 @@ public class UserController {
         System.out.println(user.getUsername() + "//" + user.getPassword());
         boolean success = userService.login(user);
         if (success) {
-            return new ModelAndView("/portal/welcome.html");
+            return new ModelAndView("portal/welcome.html");
 
         } else {
-            return new ModelAndView("/portal/404.html");
+            return new ModelAndView("portal/404.html");
         }
     }
 
